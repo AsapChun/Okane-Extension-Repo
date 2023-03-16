@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Okane Extension Dashboard</title>
+
+    <!-- Custom fonts for this template     <link href="../core-css/all.min.css" rel="stylesheet" type="text/css">
+    -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link href="popup.css" rel="stylesheet" >
+
+</head>
+
+<body id="page-top" style="width: 400px; height: 515px; overflow: hidden;">
+    <!-- Loading-->
+    <div id ="loadingIn" class = "overallContainer" style="width: 100%; height: 100%; border-radius: 25px;">
+        <!-- Header -->
+            <div class="row header loadingInHeader">    
+                <div class="logo align-items-center">
+                    <img class = "logo_img loadingInLogo" src="../../images/okane_logo_128px.png" alt="Okane">
+                    <div class = "pulseLoader"></div>
+                </div>
+                <div class = "loadingText">
+                    Loading...
+                </div> 
+            </div>
+        <!-- End of Header -->
+    </div>
+    <!-- End of Loading-->
+
+    <!-- Loading-->
+    <div id ="parsingIn" class = "overallContainer" style="width: 100%; height: 100%; border-radius: 25px;">
+        <!-- Header -->
+            <div class="row header loadingInHeader">    
+                <div class="logo align-items-center">
+                    <img class = "logo_img loadingInLogo" src="../../images/okane_logo_128px.png" alt="Okane">
+                    <div class = "pulseLoader"></div>
+                </div>
+                <div class = "loadingText">
+                    Loading your data, please wait a few minutes...
+                </div> 
+            </div>
+        <!-- End of Header -->
+    </div>
+    <!-- End of Loading-->
+    
+    <div id ="loggedIn" class = "overallContainer" style="width: 100%; height: 100%; border-radius: 25px;">
+        <!-- Header -->
+            <div class="row header">    
+                <div class="logo col-xs-4 col-lg-4 align-items-center">
+                    <img class = "logo_img" src="../../images/okane_logo_128px.png" alt="Okane">
+                </div>
+                <div class="col-xs-2 col-lg-2 col-xs-offset-5 col-lg-offset-5">
+                </div> 
+                <div class="col-xs-1 col-lg-1"></div> 
+            </div>
+            <!-- End of Header -->
+        
+             
+            <!-- Categories -->
+            <div class="row categories show_toggle_lead this_month_lead">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div class="messageTopText">This month's spend on non-essential goods: $<a id = "categoryTotalInput">1000</a> <br/>Here are your top spending categories... </div>
+                </div>
+            </div>
+
+            <!-- Categories (avg) -->
+            <div class="row categories hidden_toggle_lead average_categories_lead">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div class="messageTopText">On average, you spent $<a id = "totalAverageSpending">1000</a> on non-essential purchases...</div>
+                </div>
+            </div>
+
+            <!-- Category Toggle -->
+            <div class = "categories category_toggle">  
+                <button id = "this_month_button" type="button" class="btn btn_toggle_on">this month</button>
+                <button id = "avg_spend_button" type="button" class="btn btn_toggle_off">avg spend</button>
+            </div>
+
+            <div class="row categories_detail show_toggle_detail this_month_categories">
+                <div class="category_container">
+                    <div id = "category_1" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Eating Out.png">
+                        <div class = "category_numbers_main">
+                            $200
+                       </div>
+                       <div class = "category_numbers_sub">
+                            (20%)
+                        </div>
+                    </div>
+
+                    <div id = "category_2" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Entertainment.png">
+                        <div class = "category_numbers_main">
+                             $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                             (20%)
+                         </div>
+                     </div>
+
+                     <div id = "category_3" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Personal Care.png">
+                        <div class = "category_numbers_main">
+                             $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                             (20%)
+                         </div>
+                     </div>
+
+                     <div id = "category_4" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/General Expenses.png">
+                        <div class = "category_numbers_main">
+                             $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                             (20%)
+                         </div>
+                     </div>
+
+                     <div id = "category_5" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Shopping.png">
+                        <div class = "category_numbers_main">
+                             $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                             (20%)
+                         </div>
+                     </div>  
+                </div>
+                <div class="category_hover_over">
+                    I am a category description
+                </div>  
+            </div>
+
+            <div class="row categories_detail hidden_toggle_detail average_categories">  
+                <div class="category_container">
+                    <div id = "category_1" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Eating Out.png">
+                        <div class = "category_numbers_main">
+                            $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                            (50%)
+                        </div>
+                    </div>
+
+                    <div id = "category_2" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Entertainment.png">
+                        <div class = "category_numbers_main">
+                                $75
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (19%)
+                            </div>
+                        </div>
+
+                        <div id = "category_3"  class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Personal Care.png">
+                            <div class = "category_numbers_main">
+                                $30
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (8%)
+                            </div>
+                        </div>
+
+                        <div id = "category_4" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/General Expenses.png">
+                            <div class = "category_numbers_main">
+                                $28
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (7%)
+                            </div>
+                        </div>
+
+                        <div id = "category_5" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Shopping.png">
+                            <div class = "category_numbers_main">
+                                $12
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (3%)
+                            </div>
+                        </div>
+                </div>
+                <div class="category_hover_over">
+                    I am a category description
+                </div>
+            </div>
+
+            <!-- Expand Categories -->
+            <div class="row expand_categories">    
+                <div class="col-xs-12 col-lg-12">
+                    <button id="LoggedInButtton" class="dashboardButtonLoggedIn">
+                        see the details / view transactions
+                    </button>
+                </div>
+            </div>
+            <!-- End of Categories -->
+
+            <!-- Doughnut Chart -->
+            <div class="row doughnut_header">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div id="donutText" class="messageDoughnutText">You are $152 under your last month's spending.<br>
+                        Keep it up 😆!</div>
+                </div>
+            </div>
+            <div id="doughnutChartLoggedIn" class="row doughnutChart">    
+                <!--
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <canvas id="myChart" width="375" height="200"></canvas>
+                </div>
+                -->
+            </div>
+            <!-- End of Doughnut Chart -->
+        <!-- Reward Program (WIP)-->
+        <div class="nextStepsLead">
+            Next steps
+        </div>
+        <div class="row reward_program_row">    
+            <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                <img id="nextStepsDashboard" onclick='window.open("https://okane-app.com/dashboard")' class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Visit_Dashboard_ToDo.png"></img>
+                <div id="nextStepsDashboardHover" class="toolTipNextSteps">
+                    See more about your financials on our dashboard
+                </div>
+            </div>
+            <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                <img id="nextStepsConnectAccount" class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Connect_Account_ToDo.png"></img>
+                <div id="nextStepsConnectAccountHover" class="toolTipNextSteps">
+                    Connect to see your online/oflfine spending
+                </div>
+            </div>
+            <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                <img id="nextStepsPin" class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Pin_ToDo.png"></img>
+                <div id="nextStepsPinHover" class="toolTipNextStepsLr">
+                    Pinning makes it easier to find Okane! We'll show you how...
+                </div>
+            </div>
+        </div>
+        <!-- End of Reward Program (WIP) -->
+        <!-- End of Logged In-->
+    </div>
+
+
+    <div id ="notLoggedIn" class = "overallContainer" style="width: 100%; height: 100%; border-radius: 25px;">
+        <!-- Grey Demo Overlay -->
+        <div id="greyOverlay"></div>
+        <div id="demoOverlayText">
+            You're in demo mode <br>
+            Click <a id="demoFadeInLinkToDashboard">here</a> to connect your accounts to see your data 😊
+        </div>
+        <!-- Header -->
+            <div class="row header">
+                <div class="logo col-xs-4 col-lg-4 align-items-center">
+                    <img class = "logo_img" src="../../images/okane_logo_128px.png" alt="Okane">
+                </div>    
+                <div class="col-xs-8 col-lg-8 headerNotLoggedIn">
+                    <div class="demoLead">You're in demo mode.</div>
+                    <div class="demoSub">Link your accounts to see more!</a></div>
+                </div> 
+            </div>
+            <!-- End of Header -->
+            
+
+            <!-- Categories (this month) -->
+            <div class="row categories show_toggle_lead this_month_lead">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div class="messageTopText">This month's spend on non-essential goods: $400 <br/>Here are your top 5 spending categories... </div>
+                </div>
+            </div>
+
+            <!-- Categories (avg) -->
+            <div class="row categories hidden_toggle_lead average_categories_lead">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div class="messageTopText">On average, you spent $552 on non-essential purchases...</div>
+                </div>
+            </div>
+
+            <!-- Category Toggle -->
+            <div class = "categories category_toggle">  
+                <button id = "this_month_button" type="button" class="btn btn_toggle_on">this month</button>
+                <button id = "avg_spend_button" type="button" class="btn btn_toggle_off">avg spend</button>
+            </div>
+
+            <div class="row categories_detail show_toggle_detail this_month_categories">  
+                <div class="category_container">
+                    <div id = "category_1" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Eating Out.png">
+                        <div class = "category_numbers_main">
+                            $200
+                        </div>
+                        <div class = "category_numbers_sub">
+                            (50%)
+                        </div>
+                    </div>
+
+                    <div id = "category_2" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Entertainment.png">
+                        <div class = "category_numbers_main">
+                                $75
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (19%)
+                            </div>
+                        </div>
+
+                        <div id = "category_3"  class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Personal Care.png">
+                        <div class = "category_numbers_main">
+                                $30
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (8%)
+                            </div>
+                        </div>
+
+                        <div id = "category_4" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/General Expenses.png">
+                        <div class = "category_numbers_main">
+                                $28
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (7%)
+                            </div>
+                        </div>
+
+                        <div id = "category_5" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Shopping.png">
+                        <div class = "category_numbers_main">
+                                $12
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (3%)
+                            </div>
+                        </div>
+                </div>
+                <div class="category_hover_over">
+                    I am a category description
+                    </div>
+            </div>
+
+
+            <div class="row categories_detail hidden_toggle_detail average_categories">  
+                <div class="category_container">
+                    <div id = "category_1" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Eating Out.png">
+                        <div class = "category_numbers_main">
+                            $160
+                        </div>
+                        <div class = "category_numbers_sub">
+                            (29%)
+                        </div>
+                    </div>
+
+                    <div id = "category_2" class = "category_emoji_and_numbers">
+                        <img class ="cateogory_emoji" src="../../images/Icons/Groceries.png">
+                        <div class = "category_numbers_main">
+                                $150
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (27%)
+                            </div>
+                        </div>
+
+                        <div id = "category_3"  class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Entertainment.png">
+                            <div class = "category_numbers_main">
+                                $100
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (18%)
+                            </div>
+                        </div>
+
+                        <div id = "category_4" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/Shopping.png">
+                        <div class = "category_numbers_main">
+                                $20
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (4%)
+                            </div>
+                        </div>
+
+                        <div id = "category_5" class = "category_emoji_and_numbers">
+                            <img class ="cateogory_emoji" src="../../images/Icons/General Expenses.png">
+                        <div class = "category_numbers_main">
+                                $12
+                        </div>
+                        <div class = "category_numbers_sub">
+                                (2%)
+                            </div>
+                        </div>
+                </div>
+                <div class="category_hover_over">
+                    I am a category description
+                    </div>
+            </div>
+                        
+            <!-- Expand Categories -->
+            <div class="row expand_categories">    
+                <div class="col-xs-12 col-lg-12">
+                    <button id="notLoggedInButtton" class="dashboardButtonLoggedOut">
+                        ready to leave demo mode? connect your accounts here
+                    </button>
+                </div>
+            </div>
+            <!-- End of Categories -->
+
+            <!-- Doughnut Chart -->
+            <div class="row doughnut_header">    
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <div class="messageDoughnutText">You are $152 under your last month's spending.<br>
+                        Keep it up 😆!</div>
+                </div>
+            </div>
+            <div id="doughnutChartNotLoggedIn" class="row doughnutChart">    
+                <!--
+                <div class="col-xs-12 col-lg-12 align-items-center">
+                    <canvas id="myChart" width="375" height="200"></canvas>
+                </div>
+                -->
+            </div>
+            <!-- End of Doughnut Chart -->
+    
+            <!-- Reward Program (WIP)-->
+            <div class="nextStepsLead">
+                Next steps
+            </div>
+            <div class="row reward_program_row">    
+                <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                    <img id="nextStepsDashboard" class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Visit_Dashboard_ToDo.png"></img>
+                    <div id="nextStepsDashboardHover" class="toolTipNextSteps">
+                        See more about your financials on our dashboard
+                    </div>
+                </div>
+                <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                    <img id="nextStepsConnectAccount" class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Connect_Account_ToDo.png"></img>
+                    <div id="nextStepsConnectAccountHover" class="toolTipNextSteps">
+                        Connect to see your online/oflfine spending
+                    </div>
+                </div>
+                <div class="col-xs-4 col-lg-4 nextStepsImageDiv">
+                    <img id="nextStepsPin" class="nextStepsImage" src="../../images/Next_Steps/Next_Steps_Pin_ToDo.png"></img>
+                    <div id="nextStepsPinHover" class="toolTipNextStepsLr">
+                        Pinning makes it easier to find Okane! We'll show you how...
+                    </div>
+                </div>
+            </div>
+            <!-- End of Reward Program (WIP) -->
+        <!-- End of Not Logged In-->
+    </div>
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="../core-js/sb-admin-2.min.js"></script>
+    <script src="../vendor/d3/d3.v6.js"></script>
+    <script src="js/popup.js" source = "popupPage" id = "okaneGraphScript"></script> 
+</body>
+
+</html>
